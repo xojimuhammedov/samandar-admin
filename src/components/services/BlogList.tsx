@@ -43,7 +43,7 @@ const BlogList = () => {
   const handleDeleteProduct = (id: string) => {
     axios
       .delete(
-        `${apiUrl}/hotels/${id}`,
+        `${apiUrl}/news/${id}`,
         header
       )
       .then((res) => {
@@ -82,7 +82,7 @@ const BlogList = () => {
 
   useEffect(() => {
     axios
-      .get(`${apiUrl}/hotels `)
+      .get(`${apiUrl}/news `)
       .then((res) => { 
         setBlogs(res.data.data);
         setotalPages(res.data.totalPages);
@@ -143,7 +143,7 @@ const BlogList = () => {
                     <div className="cashier-salereturns-table-list flex border-b border-solid border-grayBorder h-12">
                    
                       <div className="cashier-salereturns-table-dateF  ml-5">
-                        <h5>Kurs nomi</h5>
+                        <h5>Tour nomi</h5>
                       </div>  
 
 

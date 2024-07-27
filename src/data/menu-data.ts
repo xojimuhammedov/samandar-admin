@@ -45,48 +45,48 @@ export const menuData: MenuItem[] = [
   //   ],
   // },
 
-  {
-    id: 7,
-    text: "Категория в соответствии с",
-    icon: BlogIcon,
-    submenu: [
-      {
-        text: "Все категории",
-        link: "/categories",
-      },
-      {
-        text: "Создать категорию",
-        link: "/create-categories",
-      },
-    ],
-  },
+  // {
+  //   id: 7,
+  //   text: "Категория в соответствии с",
+  //   icon: BlogIcon,
+  //   submenu: [
+  //     {
+  //       text: "Все категории",
+  //       link: "/categories",
+  //     },
+  //     {
+  //       text: "Создать категорию",
+  //       link: "/create-categories",
+  //     },
+  //   ],
+  // },
 
-  {
-    id: 8,
-    text: "Продукт",
-    icon: BlogIcon,
-    submenu: [
-      {
-        text: "Все Продукт",
-        link: "/products",
-      },
-      {
-        text: "Создать Продукт",
-        link: "/create-products",
-      },
-    ],
-  },
+  // {
+  //   id: 8,
+  //   text: "Продукт",
+  //   icon: BlogIcon,
+  //   submenu: [
+  //     {
+  //       text: "Все Продукт",
+  //       link: "/products",
+  //     },
+  //     {
+  //       text: "Создать Продукт",
+  //       link: "/create-products",
+  //     },
+  //   ],
+  // },
   {
     id: 3,
-    text: "Курсы",
+    text: "Tour",
     icon: BlogIcon,
     submenu: [
       {
-        text: "Курсы",
+        text: "Tour",
         link: "/services",
       },
       {
-        text: "Курсы Создавать",
+        text: "Tours Create",
         link: "/create-service",
       },
     ],

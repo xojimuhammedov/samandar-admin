@@ -20,8 +20,6 @@ interface FormData {
   text_uz: string;
   text_en: string;
   text_ru: string;
-  address: string;
-  rating: string;
   images: [];
 }
 
@@ -55,11 +53,9 @@ const CreateServiceMain = () => {
     formData.append("text_uz", dataOne);
     formData.append("text_en", dataTwo);
     formData.append("text_ru", dataThree);
-    formData.append("address", data.address);
-    formData.append("rating", data.rating);
 
     axios
-      .post(`${apiUrl}/hotels/`, formData, {
+      .post(`${apiUrl}/news/`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
           "Content-Type": "multipart/form-data",
@@ -67,8 +63,8 @@ const CreateServiceMain = () => {
       })
       .then((res) => {
         switch (res.data.message) {
-          case "Blog was created succesfully!":
-            toast.success(`Hotel yaratildi!🎉`, {
+          case "News was created succesfully!":
+            toast.success(`Tour yaratildi!🎉`, {
               position: "top-left",
             });
             router.push("/services");
@@ -108,6 +104,7 @@ const CreateServiceMain = () => {
     setEditorLoaded(true);
   }, []);
 
+
   return (
     <>
       <form
@@ -116,7 +113,7 @@ const CreateServiceMain = () => {
       >
         <div className="cashier-addsupplier-area bg-white p-7 custom-shadow rounded-lg pt-5 mb-5">
           <h4 className="text-[20px] font-bold text-heading mb-9">
-          Создать курс
+          Tour Create
           </h4>
           <div className="grid grid-cols-12 gap-x-5">
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
@@ -248,7 +245,7 @@ const CreateServiceMain = () => {
               <div className="cashier-select-field mb-5">
                 <h5 className="text-[15px] text-heading font-semibold mb-3">
                   {" "}
-                  Скачать видео курса
+                  Image
                 </h5>
                 <div className="cashier-input-field-style">
                   <div className="single-input-field w-full">

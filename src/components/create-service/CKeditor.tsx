@@ -28,15 +28,16 @@ export default function CKeditor({
           }}
           config={{
             toolbar: [
-              "heading",
-              "|",
-              "bold",
-              "italic",
-              "link",
-              "bulletedList",
-              "numberedList",
-              "blockQuote",
+              'undo', 'redo',
+              '|', 'heading',
+              '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+              '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+              '-', // break point
+              '|', 'alignment',
+              'link', 'uploadImage', 'blockQuote', 'codeBlock',
+              '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
             ],
+             shouldNotGroupWhenFull: true,
           }}
         />
       ) : (

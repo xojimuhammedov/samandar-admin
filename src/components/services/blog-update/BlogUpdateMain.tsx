@@ -18,8 +18,6 @@ interface FormData {
   text_uz: string;
   text_en: string;
   text_ru: string;
-  address: string;
-  rating: string; 
   images: []
 }
 const BlogUpdateMain = ({ id }: idType) => {
@@ -34,7 +32,7 @@ const BlogUpdateMain = ({ id }: idType) => {
 
   useEffect(() => {
     axios
-      .get(`${apiUrl}/hotels/${id}`)
+      .get(`${apiUrl}/news/${id}`)
       .then((res) => { 
         setProduct(res.data.data);
       })
@@ -66,14 +64,10 @@ const BlogUpdateMain = ({ id }: idType) => {
       formData.append('text_uz', data.text_uz); 
       formData.append('text_en', data.text_en); 
       formData.append('text_ru', data.text_ru);
-      formData.append('address', data.address);
-      formData.append('rating', data.rating);
-
-
 
     
     axios
-      .put(`${apiUrl}/hotels/${id}`, formData,{
+      .put(`${apiUrl}/news/${id}`, formData,{
         headers:{
           "Authorization": `Bearer ${localStorage.getItem('accessToken')}`,
           "Content-Type":"multipart/form-data", 
@@ -107,13 +101,13 @@ const BlogUpdateMain = ({ id }: idType) => {
         >
           <div className="cashier-addsupplier-area bg-white p-7 custom-shadow rounded-lg pt-5 mb-5">
             <h4 className="text-[20px] font-bold text-heading mb-9">
-               Hotelni o`zgartirish 
+               Tourni o`zgartirish 
             </h4>
             <div className="grid grid-cols-12 gap-x-5"> 
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <div className="cashier-select-field mb-5">
                 <h5 className="text-[15px] text-heading font-semibold mb-3">
-                  Hotel nomi - Uz
+                Tour nomi - Uz
                 </h5>
                 <div className="cashier-input-field-style">
                   <div className="single-input-field w-full">
@@ -132,7 +126,7 @@ const BlogUpdateMain = ({ id }: idType) => {
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <div className="cashier-select-field mb-5">
                 <h5 className="text-[15px] text-heading font-semibold mb-3">
-                  Hotel nomi - En
+                Tour nomi - En
                 </h5>
                 <div className="cashier-input-field-style">
                   <div className="single-input-field w-full">
@@ -151,7 +145,7 @@ const BlogUpdateMain = ({ id }: idType) => {
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <div className="cashier-select-field mb-5">
                 <h5 className="text-[15px] text-heading font-semibold mb-3">
-                  Hotel nomi - Ru
+                Tour nomi - Ru
                 </h5>
                 <div className="cashier-input-field-style">
                   <div className="single-input-field w-full">
@@ -170,7 +164,7 @@ const BlogUpdateMain = ({ id }: idType) => {
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <div className="cashier-select-field mb-5">
                 <h5 className="text-[15px] text-heading font-semibold mb-3">
-                  Hotel tavsifi - Uz
+                Tour tavsifi - Uz
                 </h5>
                 <div className="cashier-input-field-style">
                   <div className="single-input-field w-full">
@@ -189,7 +183,7 @@ const BlogUpdateMain = ({ id }: idType) => {
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <div className="cashier-select-field mb-5">
                 <h5 className="text-[15px] text-heading font-semibold mb-3">
-                  Hotel tavsifi - Ru
+                Tour tavsifi - Ru
                 </h5>
                 <div className="cashier-input-field-style">
                   <div className="single-input-field w-full">
@@ -225,43 +219,6 @@ const BlogUpdateMain = ({ id }: idType) => {
               </div>
             </div>
 
-            <div className="lg:col-span-4 md:col-span-6 col-span-12">
-                <div className="cashier-select-field mb-5">
-                  <h5 className="text-[15px] text-heading font-semibold mb-3">
-                    Hotel Reytingi
-                  </h5>
-                  <div className="cashier-input-field-style">
-                    <div className="single-input-field w-full">
-                      <input
-                        type="text"
-                        defaultValue={myproduct.rating}
-                        placeholder="Hotel Reytingi"
-                        {...register("rating")}
-                      />
-                      {errors.rating && <span>{errors.rating.message}</span>}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-4 md:col-span-6 col-span-12">
-                <div className="cashier-select-field mb-5">
-                  <h5 className="text-[15px] text-heading font-semibold mb-3">
-                    Hotel Manzili
-                  </h5>
-                  <div className="cashier-input-field-style">
-                    <div className="single-input-field w-full">
-                      <input
-                        type="text"
-                        defaultValue={myproduct.address}
-                        placeholder="Hotel Manzili"
-                        {...register("address")}
-                      />
-                      {errors.address && <span>{errors.address.message}</span>}
-                    </div>
-                  </div>
-                </div>
-              </div>
 
             <div className="lg:col-span-4 md:col-span-6 col-span-12">
               <div className="cashier-select-field mb-5">
