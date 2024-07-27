@@ -37,7 +37,6 @@ export default function CKeditor({
               'link', 'uploadImage', 'blockQuote', 'codeBlock',
               '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
             ],
-             shouldNotGroupWhenFull: true,
           }}
         />
       ) : (
